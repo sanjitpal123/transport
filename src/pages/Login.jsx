@@ -36,7 +36,7 @@ export default function Login() {
       if (res.status) {
         toast.success(res.message);
         if (res.user) {
-          localStorage.setItem("user", JSON.stringify(res.user));
+          localStorage.setItem("user", JSON.stringify(res));
           setUser(res.user);
           Navigate("/");
         }
@@ -115,12 +115,12 @@ export default function Login() {
           </div>
 
           {/* Button */}
-          <SubmitButton
+          <button
             type="submit"
             className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition"
           >
             Login
-          </SubmitButton>
+          </button>
         </form>
       </div>
     </div>

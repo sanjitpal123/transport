@@ -18,3 +18,21 @@ export const SignInWithOtp = async (data) => {
     throw error;
   }
 };
+
+export const Logout = async (token) => {
+  try {
+    console.log("token", token);
+    const res = await axiosInstace.post(
+      "/logout",
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
